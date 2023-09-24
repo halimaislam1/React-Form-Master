@@ -7,15 +7,42 @@ import ReuseableForm from './Component/ReuseableForm/ReuseableForm'
 // import StateFulForm from './Component/StateFulForm/StateFulForm'
 
 function App() {
-  
+
+  const handleSignUpSubmit = data => {
+    console.log('sign up data: ', data);
+  }
+
+  const handleUpdateProfile = data => {
+    console.log('Update profile data: ', data);
+  }
+
+
+
+
   return (
-    <>   
+    <>
       <h1 className='mb-8'>Vite + React</h1>
       {/* <SimpleForm></SimpleForm> */}
       {/* <StateFulForm></StateFulForm> */}
       {/* <RefForm></RefForm> */}
       {/* <HookForm></HookForm> */}
-      <ReuseableForm></ReuseableForm>
+      <ReuseableForm 
+                formTitle={'Sign up'}
+                handleSubmit={handleSignUpSubmit}> 
+                <div >
+                  <h3 className ="font-extrabold text-5xl mb-4 mt-4" >Sign up</h3>
+                  <p className ="font-bold text-xl mb-5">Please sign up right now</p>
+                </div>
+      </ReuseableForm>
+      <ReuseableForm
+                handleSubmit={handleUpdateProfile}
+                formTitle={'Profile Update'}
+                submitButtonText='Update'>
+                <div>
+                  <h3 className =" font-extrabold text-5xl mb-4 mt-4">Update Profile</h3>
+                  <p className ="font-bold text-xl mb-5">Alwys keep your  Profile Update</p>
+                </div>
+                </ReuseableForm>
     </>
   )
 }

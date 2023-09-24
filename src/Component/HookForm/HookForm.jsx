@@ -24,7 +24,7 @@ const handleSubmit =(e) =>{
                 <input className="bg-gray-200 mb-3 p-2"
                  type="password" name="password" />
                 <br />
-                <input className="mt-5 text-white text-xl
+                <input className="mt-2 text-white text-xl
                  bg-cyan-500 p-3 rounded-lg" 
                  type="submit" value="submit" />
             </form>

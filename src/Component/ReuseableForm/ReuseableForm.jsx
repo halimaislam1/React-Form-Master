@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { Children } from 'react';
 
-const ReuseableForm = () => {
+const ReuseableForm = ({formTitle ,handleSubmit, submitButtonText='Submit',children}) => {
 
-const handleSubmit = e => {
-    e.preventDefault();
-}
+    const handleLocalSubmit = e => {
+        e.preventDefault();
+        const data = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            password: e.target.password.value
+        }
+        handleSubmit(data);
+    }
+    
+// const handleSubmit = e => {
+//     e.preventDefault();
+// }
 
     return (
         <div>
-            <h2 className='text-4xl font-extrabold mb-3'>sign up</h2>
-            <form onSubmit={handleSubmit}>
+            {children}
+            <form onSubmit={handleLocalSubmit}>
                 <input className="bg-gray-200 mb-3 p-2" 
                 type="text" name="name" />
                 <br />
@@ -21,7 +31,7 @@ const handleSubmit = e => {
                 <br />
                 <input className="mt-5 text-white text-xl
                  bg-cyan-500 p-3 rounded-lg" 
-                 type="submit" value="submit" />
+                 type="submit" value={submitButtonText} />
             </form>
         </div>
     );
