@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-      <h1 className='mb-8'>Vite + React</h1>
+      <h1 className='mb-8'>React Form Master</h1>
       {/* <SimpleForm></SimpleForm> */}
       {/* <StateFulForm></StateFulForm> */}
       {/* <RefForm></RefForm> */}
